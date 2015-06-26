@@ -27,6 +27,8 @@ $desktop: 960px;
 @mixin boxes {
 	border: 8px solid #000000;
 	padding: 4%;
+	margin-top: 2%;
+	margin-bottom: 2%;
 
 	@include breakpoint($tablet){
 		padding: 1%;
@@ -65,6 +67,7 @@ h1{
 	margin-bottom: 0;
 	letter-spacing: 40px;
 	text-transform: uppercase;
+	padding-left: 40px;
 
 }
 
@@ -95,6 +98,7 @@ ul{
 
 p{
 	font-size: 0.8em;
+	line-height: 1.5;
 
 	@include breakpoint($desktop){
 		font-size: 1em;
@@ -140,6 +144,7 @@ p{
 		padding-top: 3%;
 		padding-bottom: 3%;
 		position: relative;
+		text-align: center;
 		
 	@include clearfix;
 	}
@@ -157,7 +162,8 @@ p{
 		}
 
 		@include breakpoint($desktop){
-			width: 84px;
+			width: 95px;
+			height: 95px;
 		}
 	}
 }
@@ -168,75 +174,76 @@ p{
 	}
 }
 
-.fixed_header{
+.subpage_site_header button a{
+	color: $black;
+	text-decoration: none;
+}
+
+.fixed_header_menu{
 
 	display: none;
 
 	@include breakpoint($desktop){
 	display: block; 
-	width: 15%;
+	width: 75px;
+	height: 75px;
 	position: absolute;
-	bottom: 65px;
-	left: 65px;
+	top: 55px;
+	left: 95px;
 	background: rgba(255, 255, 255, 0.4);
+	border: 5px solid $black;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	transform: rotate(45deg);
+	
 	}
 
 }
 
-.fixed_header ul{
+.fixed_header_menu h5{
+	transform: rotate(-45deg);
 
-	@include breakpoint($desktop){
-		text-align: left;
+}
 
-		}
-	}
+.fixed_header_menu a{
+	text-align: center;
+	font-weight: 700;
+	
 
-.fixed_header ul li{
-
-		@include breakpoint($desktop){
-		width: 100%;
-		display: block;
-		padding: 3%;
-		font-size: 0.7em;
-
-		
-		}
 }
 
 
 .event_name{
-	// @include clearfix;
 	width: 100%;
-	text-align: center;
 
 }
 
 .event_name h1{
-	display: block;
-	width: 90%;
+
 	font-size: 2em;
-	margin: 0 auto;
-	padding-left: 40px;
+	text-align: center;
+
+	@include breakpoint($tablet){
+		font-size: 3em;
+	}
 
 	@include breakpoint($desktop){
-		width: 40%;
 		font-size: 7em;
-		float: right;
-		margin-left: 0;
+		
 	}
 
 }
 
 
 .logo{
-	
-	text-align:center;
+
 
 	@include breakpoint($desktop){
-			width: 20%;
-			float: right;
-			margin-top: 1%;
-			margin-left: 10%;
+		position: absolute;
+		top: 19%;
+		right: 9%;
+
+	
 		}
 
 	@include clearfix;
@@ -248,26 +255,23 @@ p{
 }
 
 
-.social_media{
-	display: none;
-}	
-
-
-.main_body div{
-
-	margin-top: 3%;
-
-}
-
 .restaurants h5{
 	text-transform: none;
 
+}
+
+.big_date{
+	margin-top: 3%;
 }
 
 .big_date h2{
 		font-size: 0.9em;
 		font-weight: 500;
 		letter-spacing: 5px;
+
+		@include breakpoint($tablet){
+			font-size: 1.5em;
+		}
 		
 
 		@include breakpoint($desktop){
@@ -279,10 +283,13 @@ p{
 
 
 .big_date h3{
-		font-size: 0.9em;
-		// text-align: center;
+		font-size: 0.6em;
 		font-weight: 500;
 		letter-spacing: 5px;
+
+		@include breakpoint($tablet){
+			font-size: 1.1em;
+		}
 
 		@include breakpoint($desktop){
 			font-size: 1.2em;
@@ -360,13 +367,46 @@ p{
 }
 
 .date_event{
-	margin-top: 3%;
+	// margin-top: 3%;
 	border-top: 1px solid $gray;
 	
 }
 
-.lunch, .sessions, .day1_registration{
+.date_event h5{
+	@include breakpoint($desktop){
+		margin-bottom: 0;
+	}
+}
+
+.date_event h3{
+	@include breakpoint($desktop){
+		margin-top: 0;
+	}
+}
+
+.sessions{
+
+	@include breakpoint($desktop){
+		margin-top: 0;
+	}
+	
+}
+
+.lunch, .sessions, .day1_registration, .demos, .demo_signups, .hangout, .methodical{
 	border-top: 1px solid $gray;
+}
+
+.speaker_info{
+	@include breakpoint($desktop){
+		padding-bottom: 2%;
+
+		@include clearfix;
+	}
+}
+
+.speaker_info h3 a{
+	color: $black;
+	text-decoration: none;
 }
 
 .speakers img{
@@ -374,12 +414,63 @@ p{
 	margin: 0 auto;
 
 	@include breakpoint($tablet){
-		width: 20%;
+		width: 15%;
+		float: left;
+		margin-right: 2%;
 	}
 }
 
 .day1_registration h3{
 	text-align: left;
+}
+
+.gamenight{
+	border-top: 1px solid $gray;
+}
+
+#menu{
+	text-align: center;
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 6%;
+	margin-top: 6%;
+
+	@include breakpoint($tablet){
+		width: 40%;
+	}
+
+	@include breakpoint($desktop){
+		width: 30%;
+	}
+ 
+		li{
+			width: 78%;
+			display: block;
+			border: 5px solid $black;
+			padding: 4%;
+			margin: 4%;
+
+			@include breakpoint($tablet){
+				font-size: 0.9em;
+			}
+
+			@include breakpoint($desktop){
+			
+				font-size: 1.1em;
+				
+			}
+			
+	}
+
+		a{
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $black;
+			text-align: center;
+
+		}
+
 }
 
 footer{
@@ -426,10 +517,10 @@ footer{
 
 	input{
 		padding: 1%;
-		width: 70%;
+		width: 82%;
 		margin: 1%;
 
-		@include breakpoint($midmobile){
+		@include breakpoint($tablet){
 			width: 25%;
 		}
 
@@ -465,7 +556,7 @@ footer{
 }
 
 .r{
-		font-size: 0.5em;
+		font-size: 0.4em;
 		text-align: center;
 		padding: 3%;
 
@@ -508,6 +599,7 @@ footer{
 		}
 		@include breakpoint($desktop){
 			width: 50%;
+			margin-top: 10%;
 		}
 
 	}
@@ -515,39 +607,35 @@ footer{
 }
 
 
-.homepage_fixed_header{
+.fixed_header_menu_homepage{
 
 	display: none;
 
 	@include breakpoint($desktop){
 	display: block; 
-	width: 15%;
+	width: 80px;
+	height: 80px;
 	position: absolute;
-	top: 20px;
-	left: 60px;
+	top: 20%;
+	left: 10%;
 	background: rgba(255, 255, 255, 0.4);
+	border: 5px solid $black;
+	padding: 1%;
+	text-transform: uppercase;
+	font-size: 0.9em;
+	text-align: center;
+	transform: rotate(45deg);
 	}
 
 }
 
-.homepage_fixed_header ul{
+.fixed_header_menu_homepage h5{
+	transform: rotate(-45deg);
+}
 
-	@include breakpoint($desktop){
-		text-align: left;
-
-		}
-	}
-
-.homepage_fixed_header ul li{
-
-		@include breakpoint($desktop){
-		width: 100%;
-		display: block;
-		padding: 3%;
-		font-size: 0.7em;
-
-		
-		}
+.fixed_header_menu_homepage a{
+	color: $black;
+	font-weight: 300;
 }
 
 .homepage_event_name{
@@ -576,11 +664,12 @@ footer{
 	margin: 0;
 
 	@include breakpoint($desktop){
-			width: 16%;
-			margin-top: 1%;
+			width: 185px;
+			height: 185px;
+			margin-top: 2%;
 			position: absolute;
-			right: 25px;
-			top: 9px;
+			right: 4%;
+			top: 3%;
 		}
 
 	@include clearfix;
@@ -593,9 +682,9 @@ footer{
 	}
 }	
 
-.homepage_social_media{
-	display: none;
 
+.homepage_date{
+	margin-top: 3%;
 }	
 
 
@@ -652,6 +741,19 @@ footer{
 
 }
 
+.grok_info, .grok_info h3{
+	@include breakpoint($desktop){
+	text-align: right;
+
+	}
+}
+
+.session_info, .session_info h3{
+	@include breakpoint($desktop){
+	text-align: left;
+	}
+}
+
 .people_button, .register_button, .schedule_button{
 	@include boxes;
 
@@ -664,7 +766,7 @@ footer{
 	}
 
 	h3{
-		font-size: 1.6em;
+		font-size: 1.2em;
 		text-align: center;
 		font-weight: 300;
 		letter-spacing: 17px;
@@ -673,6 +775,11 @@ footer{
 
 .people_button a, .register_button a, .schedule_button a{
 	color: #000000;
+	text-decoration: none;
+}
+
+.fixed_header_menu_homepage a{
+	color: $black;
 	text-decoration: none;
 }
 
